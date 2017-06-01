@@ -25,7 +25,7 @@ class TaskController extends Controller
     	return view('tasks.index', compact('tasks'));
     }
 
-    public function store()
+    public function store(Request $request)
 
     {
          $this->validate($request, [
@@ -45,6 +45,10 @@ class TaskController extends Controller
     public function destroy(Request $request, Task $task)
     {
 
-    	//
+    //	$this->authorize('destroy', $task);
+
+      $task->delete();
+
+      return redirect('/tasks');
     }
 }

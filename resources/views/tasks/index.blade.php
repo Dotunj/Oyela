@@ -8,7 +8,7 @@
 	@include('common.errors')
 
 	<form action="/task" method="POST" class="form-horizontal">
-		{{csrf_field}}
+		{{csrf_field()}}
 
 		<div class="form-group">
 			<label for="task-name" class="col-sm-3 control-label">Task</label>

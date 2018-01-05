@@ -22,7 +22,9 @@ class TaskController extends Controller
     {
     	$tasks = $this->tasks->forUser($request->user());
 
-    	return view('tasks.index', compact('tasks'));
+      $test = Task::all();
+
+    	return view('tasks.index', compact('tasks', 'test'));
     }
 
     public function store(Request $request)
